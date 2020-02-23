@@ -64,52 +64,60 @@ function render() {
   }
 }
 
-var stack = new Stack<Cell>();
-
-cells[0][0].visited = true;
-stack.push(cells[0][0]);
-
-while (!stack.isEmpty()) {
-  let current = stack.pop();
-  let i = current.i;
-  let j = current.j;
-  let neighbors = [];
-  if ( cells[i - 1] !== undefined && cells[i - 1][j] !== undefined && !cells[i - 1][j].visited) {
-    neighbors.push({ direction: "top", cell: cells[i - 1][j] });
-  }
-  if (cells[i - 1] !== undefined && cells[i + 1][j] !== undefined && !cells[i + 1][j].visited) {
-    neighbors.push({ direction: "bottom", cell: cells[i + 1][j] });
-  }
-  if (cells[i][j + 1] !== undefined && !cells[i][j + 1].visited) {
-    neighbors.push({ direction: "right", cell: cells[i][j + 1] });
-  }
-  if (cells[i][j - 1] !== undefined && !cells[i][j - 1].visited) {
-    neighbors.push({ direction: "left", cell: cells[i][j - 1] });
-  }
-  
-  if (neighbors.length > 0) {
-    stack.push(current);
-    let selected = neighbors[Math.floor(Math.random() * neighbors.length)];
-    switch (selected.direction) {
-      case "top":
-        current.hasTopWall = false;
-        selected.cell.hasBottomWall = false;
-        break;
-      case "bottom":
-        current.hasBottomWall = false;
-        selected.cell.hasTopWall = false;
-        break;
-      case "right":
-        current.hasRightWall = false;
-        selected.cell.hasLeftWall = false;
-        break;
-      case "left":
-        current.hasLeftWall = false;
-        selected.cell.hasRightWall = false;
-        break;
-    }
-    selected.cell.visited = true;
-    stack.push(selected.cell);
-  }
-  render();
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+async function generate() {
+  var stack = new Stack<Cell>();
+
+  cells[0][0].visited = true;
+  stack.push(cells[0][0]);
+
+  while (!stack.isEmpty()) {
+    let current = stack.pop();
+    let i = current.i;
+    let j = current.j;
+    let neighbors = [];
+    if ( cells[i - 1] !== undefined && cells[i - 1][j] !== undefined && !cells[i - 1][j].visited) {
+      neighbors.push({ direction: "top", cell: cells[i - 1][j] });
+    }
+    if (cells[i + 1] !== undefined && cells[i + 1][j] !== undefined && !cells[i + 1][j].visited) {
+      neighbors.push({ direction: "bottom", cell: cells[i + 1][j] });
+    }
+    if (cells[i][j + 1] !== undefined && !cells[i][j + 1].visited) {
+      neighbors.push({ direction: "right", cell: cells[i][j + 1] });
+    }
+    if (cells[i][j - 1] !== undefined && !cells[i][j - 1].visited) {
+      neighbors.push({ direction: "left", cell: cells[i][j - 1] });
+    }
+    
+    if (neighbors.length > 0) {
+      stack.push(current);
+      let selected = neighbors[Math.floor(Math.random() * neighbors.length)];
+      switch (selected.direction) {
+        case "top":
+          current.hasTopWall = false;
+          selected.cell.hasBottomWall = false;
+          break;
+        case "bottom":
+          current.hasBottomWall = false;
+          selected.cell.hasTopWall = false;
+          break;
+        case "right":
+          current.hasRightWall = false;
+          selected.cell.hasLeftWall = false;
+          break;
+        case "left":
+          current.hasLeftWall = false;
+          selected.cell.hasRightWall = false;
+          break;
+      }
+      selected.cell.visited = true;
+      stack.push(selected.cell);
+    }
+    render();
+  }
+}
+
+generate();
