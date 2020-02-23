@@ -1,0 +1,49 @@
+h1, h2 {
+  font-family: Lato;
+}
+
+.q-table {
+  display: table;
+  margin: auto;
+  margin-top: 100px;
+  border-collapse: collapse;
+}
+
+.q-row {
+  display: table-row;
+}
+
+.q-cell {
+  display: table-cell;
+  border: 1px solid transparent;
+  width: 20px;
+  height: 20px;
+}
+
+.q-cell:hover {
+  background-color: #ccc;
+}
+
+.q-cell.q-top-wall {
+  border-top-color: black;
+}
+
+.q-cell.q-bottom-wall {
+  border-bottom-color: black;
+}
+
+.q-cell.q-right-wall {
+  border-right-color: black;
+}
+
+.q-cell.q-left-wall {
+  border-left-color: black;
+}
+
+.q-cell.q-visited {
+  background-color: #aaa;
+}
+
+.q-cell.q-visited:hover {
+  background-color: #888;
+}
