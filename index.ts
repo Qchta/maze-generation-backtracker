@@ -46,15 +46,23 @@ function render() {
       cell.classList.add("q-cell");
       if (cells[i][j].hasTopWall) {
         cell.classList.add("q-top-wall");
+      } else {
+        cell.classList.add("q-top-no-wall");
       }
       if (cells[i][j].hasBottomWall) {
         cell.classList.add("q-bottom-wall");
+      } else {
+        cell.classList.add("q-bottom-no-wall");
       }
       if (cells[i][j].hasRightWall) {
         cell.classList.add("q-right-wall");
+      } else {
+        cell.classList.add("q-right-no-wall");
       }
       if (cells[i][j].hasLeftWall) {
         cell.classList.add("q-left-wall");
+      } else {
+        cell.classList.add("q-left-no-wall");
       }
       if (cells[i][j].visited) {
         cell.classList.add("q-visited");
