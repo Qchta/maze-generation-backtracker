@@ -31,7 +31,6 @@ for (let i = 0; i < 20; i++) {
   }
 }
 
-// Write TypeScript code!
 function render() {
   const appDiv = document.getElementById("app");
   appDiv.innerHTML = "";
