@@ -16,36 +16,64 @@ h1, h2 {
 
 .q-cell {
   display: table-cell;
-  border: 2px solid transparent;
-  /* border-radius: 4px; */
-  width: 20px;
-  height: 20px;
-}
-
-.q-cell:hover {
-  background-color: #ccc;
+  background-image: url(https://i.imgur.com/iOHqbfH.png);
+  width: 32px;
+  height: 32px;
 }
 
 .q-cell.q-top-wall {
-  border-top-color: black;
+  background-image: url(https://i.imgur.com/PMC7Ohk.png);
 }
 
 .q-cell.q-bottom-wall {
-  border-bottom-color: black;
+  background-image: url(https://i.imgur.com/kacm40W.png);
 }
 
 .q-cell.q-right-wall {
-  border-right-color: black;
+  background-image: url(https://i.imgur.com/Lq3jW8c.png);
 }
 
 .q-cell.q-left-wall {
-  border-left-color: black;
+  background-image: url(https://i.imgur.com/gbojmNo.png);
 }
 
-.q-cell.q-visited {
-  background-color: #aaa;
+.q-cell.q-top-wall.q-bottom-wall {
+  background-image: url(https://i.imgur.com/5fbHqMh.png);
 }
 
-.q-cell.q-visited:hover {
-  background-color: #888;
+.q-cell.q-right-wall.q-left-wall {
+  background-image: url(https://i.imgur.com/nYkTean.png);
+}
+
+.q-cell.q-top-wall.q-bottom-wall.q-right-wall {
+  background-image: url(https://i.imgur.com/u6wPBEz.png);
+}
+
+.q-cell.q-right-wall.q-left-wall.q-top-wall {
+  background-image: url(https://i.imgur.com/sgrGEa8.png);
+}
+
+.q-cell.q-top-wall.q-bottom-wall.q-left-wall {
+  background-image: url(https://i.imgur.com/zGqMiUH.png);
+}
+
+.q-cell.q-right-wall.q-left-wall.q-bottom-wall {
+  background-image: url(https://i.imgur.com/FkxCw8b.png);
+}
+
+
+.q-cell.q-top-wall.q-right-wall {
+  background-image: url(https://i.imgur.com/rvsPtUR.png);
+}
+
+.q-cell.q-bottom-wall.q-left-wall {
+  background-image: url(https://i.imgur.com/IhGgIZL.png);
+}
+
+.q-cell.q-right-wall.q-bottom-wall {
+  background-image: url(https://i.imgur.com/t2FV3b9.png);
+}
+
+.q-cell.q-left-wall.q-top-wall {
+  background-image: url(https://i.imgur.com/P9GVAqT.png);
 }
