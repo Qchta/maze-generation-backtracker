@@ -1,3 +1,8 @@
+
+body {
+  background-color: black;
+}
+
 h1, h2 {
   font-family: Lato;
 }
@@ -5,7 +10,7 @@ h1, h2 {
 .q-table {
   display: table;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
   border: 2px solid black;
   /* border-collapse: collapse; */
 }
@@ -61,7 +66,6 @@ h1, h2 {
   background-image: url(https://i.imgur.com/FkxCw8b.png);
 }
 
-
 .q-cell.q-top-wall.q-right-wall {
   background-image: url(https://i.imgur.com/rvsPtUR.png);
 }
@@ -76,4 +80,8 @@ h1, h2 {
 
 .q-cell.q-left-wall.q-top-wall {
   background-image: url(https://i.imgur.com/P9GVAqT.png);
+}
+
+.q-cell.q-top-wall.q-bottom-wall.q-right-wall.q-left-wall {
+  background-image: url(https://i.imgur.com/iOHqbfH.png);
 }

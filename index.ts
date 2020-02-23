@@ -124,7 +124,9 @@ async function generate() {
       stack.push(selected.cell);
     }
     render();
+    await sleep(10);
   }
 }
 
 generate();
+// render();
